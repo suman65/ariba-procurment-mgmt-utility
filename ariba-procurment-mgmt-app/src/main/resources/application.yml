@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: local
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+
+server:
+  port: 8092
+
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 120000
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+
+      
+metering:
+  windowsPath: C:\Suman\MyWork
+  unixPath: /opt/amr-deployment/baseUrlConfig.json

@@ -1,0 +1,22 @@
+spring:
+  profiles:
+    active: local
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+
+server:
+  port: 9092
+
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 120000
+  route:
+    authentication:
+      path: auth
+      refresh: refresh

@@ -1,0 +1,9 @@
+/ariba-procurment-mgmt-mqtt-client/target
+/ariba-procurment-mgmt-processor/target
+/ariba-procurment-mgmt-app/.project
+/ariba-procurment-mgmt-events-processor/.project
+/ariba-procurment-mgmt-model/.project
+/ariba-procurment-mgmt-mqtt-client/.project
+/ariba-procurment-mgmt-processor/.project
+/ariba-procurment-mgmt-service-library/.project
+/.project
