@@ -22,8 +22,6 @@ public class PurchaseRequisitionResourceAssembler extends ResourceAssemblerSuppo
     			.accountType(record.getAccountType())
     			.commodity(record.getCommodity())
     			.companyCode(record.getCompanyCode())
-    			.costCenter(record.getCostCenter())
-    			.glAccount(record.getGlAccount())
     			.onBehalfOf(record.getOnBehalfOf())
     			.prId(record.getId())
     			.purchaseRequisitionNumber(record.getPurchaseRequisitionNumber())

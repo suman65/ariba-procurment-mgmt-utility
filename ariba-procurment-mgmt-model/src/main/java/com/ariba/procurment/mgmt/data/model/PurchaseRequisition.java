@@ -46,9 +46,6 @@ public class PurchaseRequisition implements Serializable
 	@Column(name = "account_type")
 	private String accountType;
 	
-	@Column(name = "gl_account")
-	private String glAccount;
-	
 	@Column(name = "commodity")
 	private String commodity;
 	
@@ -61,8 +58,6 @@ public class PurchaseRequisition implements Serializable
 	@Column(name = "company_code")
 	private String companyCode;
 	
-	@Column(name = "cost_center")
-	private String costCenter;
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id")
@@ -70,4 +65,9 @@ public class PurchaseRequisition implements Serializable
 	
 	@Column(name = "created_date")
 	private Timestamp createdDate;
+	
+	private String reason;
+	
+	private String status;
+	private String seqNumber;
 }

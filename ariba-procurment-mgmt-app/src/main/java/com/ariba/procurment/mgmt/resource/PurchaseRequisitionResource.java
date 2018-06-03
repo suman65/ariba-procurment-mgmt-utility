@@ -26,12 +26,10 @@ public class PurchaseRequisitionResource extends ResourceSupport
 	private String purchaseRequisitionNumber;
 	private String vendor;
 	private String accountType;
-	private String glAccount;
 	private String commodity;
 	private String title;
 	private String onBehalfOf;
 	private String companyCode;
-	private String costCenter;
 	private Long userId;
 	private String createdBy;
 }

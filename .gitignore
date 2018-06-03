@@ -7,3 +7,8 @@
 /ariba-procurment-mgmt-processor/.project
 /ariba-procurment-mgmt-service-library/.project
 /.project
+/.settings
+/ariba-procurment-mgmt-app/.settings
+/ariba-procurment-mgmt-events-processor/.settings
+/ariba-procurment-mgmt-model/.settings
+/ariba-procurment-mgmt-service-library/.settings

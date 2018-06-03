@@ -44,4 +44,6 @@ public class PurchaseRequisitionDTO implements Serializable
 	private String comments;
 	private String supplierPartNumber;
 	private String eccPlant;
+	private String reason;
+	private String status;
 }

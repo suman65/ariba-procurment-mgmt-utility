@@ -86,7 +86,7 @@ public interface FileUploadService
 									.comments(row.getCell(11).getStringCellValue())
 									.supplierPartNumber(row.getCell(12) != null ? row.getCell(12).getStringCellValue() : "")
 									.eccPlant(row.getCell(13) != null ? row.getCell(13).getStringCellValue() : "")
-									.purchaseRequisitionNumber(row.getCell(15) != null ? row.getCell(15).getStringCellValue() : "")
+									//.purchaseRequisitionNumber(row.getCell(15) != null ? row.getCell(15).getStringCellValue() : "")
 									.title(title)
 									.onBehalfOf(onBehalfOf)
 									.companyCode(companyCode)

@@ -41,14 +41,13 @@ public interface PurchaseRequisitionService
 					.accountType(dtos.get(0).getAccountType())
 					.commodity(dtos.get(0).getCommodity())
 					.companyCode(dtos.get(0).getCompanyCode())
-					.costCenter(dtos.get(0).getCostCenter())
 					//.createdBy(usersRepository.findByUsername(dto.getCreatedBy()))
 					.createdDate(DateUitls.getCurrentSystemTimestamp())
-					.glAccount(dtos.get(0).getGlAccount())
 					.onBehalfOf(dtos.get(0).getOnBehalfOf())
 					.purchaseRequisitionNumber(dtos.get(0).getPurchaseRequisitionNumber())
 					.title(dtos.get(0).getTitle())
 					.vendor(dtos.get(0).getVendor())
+					.seqNumber(DateUitls.getUniqueId())
 					.build();
 				purchaseRequisition = repository.save(purchaseRequisition);
 			
@@ -65,6 +64,8 @@ public interface PurchaseRequisitionService
 					.shippingAddress(dto.getShippingAddress())
 					.supplierPartNumber(dto.getSupplierPartNumber())
 					.uom(dto.getUom())
+					.costCenter(dto.getCostCenter())
+					.glAccount(dto.getGlAccount())
 					.build();
 				lineItemsRepository.save(lineItems);
 			}
@@ -83,13 +84,13 @@ public interface PurchaseRequisitionService
 					.accountType(record.getAccountType())
 	    			.commodity(record.getCommodity())
 	    			.companyCode(record.getCompanyCode())
-	    			.costCenter(record.getCostCenter())
-	    			.glAccount(record.getGlAccount())
 	    			.onBehalfOf(record.getOnBehalfOf())
 	    			.purchaseRequisitionNumber(record.getPurchaseRequisitionNumber())
 	    			.title(record.getTitle())
 	    			.vendor(record.getVendor())
 	    			.createdDate(record.getCreatedDate())
+	    			.reason(record.getReason())
+	    			.status(record.getStatus())
 					.build();
 				content.add(details);
 			}

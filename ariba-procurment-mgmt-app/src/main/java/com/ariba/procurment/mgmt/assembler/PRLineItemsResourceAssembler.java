@@ -29,7 +29,9 @@ public class PRLineItemsResourceAssembler extends ResourceAssemblerSupport<PRLin
     			.quantity(record.getQuantity())
     			.shippingAddress(record.getShippingAddress())
     			.supplierPartNumber(record.getSupplierPartNumber())
+    			.costCenter(record.getCostCenter())
     			.uom(record.getUom())
+    			.glAccount(record.getGlAccount())
 		.build();
     }
 }

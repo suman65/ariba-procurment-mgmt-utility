@@ -66,4 +66,10 @@ public class PRLineItems implements Serializable
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pr_id")
 	private PurchaseRequisition purchaseRequisition;
+	
+	@Column(name = "cost_center")
+	private String costCenter;
+	
+	@Column(name = "gl_account")
+	private String glAccount;
 }

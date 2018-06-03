@@ -32,4 +32,6 @@ public class PRLineItemsResource extends ResourceSupport
 	private String comments;
 	private String supplierPartNumber;
 	private String eccPlant;
+	private String costCenter;
+	private String glAccount;
 }
