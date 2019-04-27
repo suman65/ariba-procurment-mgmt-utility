@@ -54,18 +54,7 @@ public interface PurchaseRequisitionService
 			for (PurchaseRequisitionDTO dto : dtos)
 			{
 				PRLineItems lineItems = PRLineItems.builder()
-					.comments(dto.getComments())
-					.eccPlant(dto.getEccPlant())
-					.itemDescription(dto.getItemDescription())
-					.needByDate(dto.getNeedByDate())
-					.price(dto.getPrice())
-					.purchaseRequisition(purchaseRequisition)
-					.quantity(dto.getQuantity())
-					.shippingAddress(dto.getShippingAddress())
-					.supplierPartNumber(dto.getSupplierPartNumber())
-					.uom(dto.getUom())
-					.costCenter(dto.getCostCenter())
-					.glAccount(dto.getGlAccount())
+				
 					.build();
 				lineItemsRepository.save(lineItems);
 			}

@@ -29,25 +29,15 @@ public interface PRLineItemsService
 		@Override
 		public PageReadEvent<PRLineItemsDTO> readData(ReadPRLineItemsSetEvent request) 
 		{
-			Page<PRLineItems> dbContent = repository.findAll(PRLineItemsSpecifications.getLineItems(request.getPrId()),PRLineItemsSpecifications.constructPageSpecification(request.getPageable().getPageNumber(),request.getPageable().getPageSize(),SpecificationUtils.sortBySortKey("id","ASC")));
+			Page<PRLineItems> dbContent = repository.findAll(new PRLineItemsSpecifications(request.getName(),request.getFromDate(),request.getToDate(),request.getLName()),
+					PRLineItemsSpecifications.constructPageSpecification(request.getPageable().getPageNumber(),request.getPageable().getPageSize(),
+					SpecificationUtils.sortBySortKey(request.getSortColumnName(), request.getSortDirection())));
 			List<PRLineItemsDTO> content = new ArrayList<>();
 			for (PRLineItems record : NepheleValidationUtils.nullSafe(dbContent)) 
 			{
 				PRLineItemsDTO details = PRLineItemsDTO.builder()
 					.id(record.getId())
-					.comments(record.getComments())
-	    			.eccPlant(record.getEccPlant())
-	    			.itemDescription(record.getItemDescription())
-	    			.needByDate(record.getNeedByDate())
-	    			.price(record.getPrice())
-	    			.prNumber(record.getPurchaseRequisition().getPurchaseRequisitionNumber())
-	    			.quantity(record.getQuantity())
-	    			.shippingAddress(record.getShippingAddress())
-	    			.supplierPartNumber(record.getSupplierPartNumber())
-	    			.costCenter(record.getCostCenter())
-	    			.uom(record.getUom())
-	    			.glAccount(record.getGlAccount())
-					.build();
+										.build();
 				content.add(details);
 			}
 			Page<PRLineItemsDTO> page = new PageImpl<>(content, request.getPageable(), dbContent != null ? dbContent.getTotalElements() : 0);

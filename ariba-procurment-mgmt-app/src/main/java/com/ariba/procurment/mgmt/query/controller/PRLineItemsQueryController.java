@@ -34,14 +34,13 @@ public class PRLineItemsQueryController
 	@RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<PagedResources<PRLineItemsResource>> readEnergyData(@RequestParam(value = QueryParameterConstants.SORT_DIRECTION, required = false) String sortDirection,
 			@RequestParam(value = QueryParameterConstants.SORT_COLUMN_NAME, required = false) String sortColumnName,
-			@RequestParam(value = QueryParameterConstants.PARENT_ID, required = true) Long prId,
+			ReadPRLineItemsSetEvent request,
 			@PageableDefault(value = Integer.MAX_VALUE) Pageable pageable,
 			PagedResourcesAssembler<PRLineItemsDTO> pagedAssembler,HttpServletRequest httpServletRequest) 
 	{
-		ReadPRLineItemsSetEvent request = new ReadPRLineItemsSetEvent().setPageable(pageable);
+		request.setPageable(pageable);
 		request.setSortDirection(sortDirection);
 		request.setSortColumnName(sortColumnName);
-		request.setPrId(prId);
 
 		PageReadEvent<PRLineItemsDTO> event = service.readData(request);
 		Page<PRLineItemsDTO> page=event.getPage();
