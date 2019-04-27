@@ -34,6 +34,5 @@ public class PRLineItems implements Serializable
 	private Long id;
 	private String name;
 	private Timestamp fromDate;
-	private Timestamp toDate;
 	private String lName;
 }
